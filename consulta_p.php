@@ -1,7 +1,7 @@
 <?php
 require 'conexion.php';
-
+$were='';
 $listar = "SELECT * FROM proveedores";
-$query =mysqli_query($conexion,$listar);
+$resultado = mysqli_query($conexion,$listar);
 
 ?>
