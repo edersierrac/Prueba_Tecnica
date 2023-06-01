@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,53 +78,54 @@
     <br>
     <br>
     <h3 class="title-5 m-b-35">Informacion de Proveedores</h3>
-    <div class="table-data__tool">
-       
-        <div class="table-data__tool-right">
-        <a class="btn btn-success btn-rounded" href="agrep.php" role="button">
-                <i class="zmdi zmdi-plus"></i>Agrergar</a>
-            
-        </div>
     </div>
+    
 
+      <div class="container">
+        
+      <form form method="post" action="insertar_p.php">
+       <div class="form-group">
+           <label for="exampleInputEmail1">Tipo de identificacion</label>
+           <select class="custom-select my-1 mr-sm-2" id="tipodocumento" name="tipodocumento">
+                    <option selected value="Cedula">Cedula</option>
+                    <option value="NIT">NIT</option>
+                    <option value="Ced extran">Cedula de extrangeria</option>
+                    <option value="NIT extran">NIT de extrangeria</option>
+           </select>
+          
+      </div>
+                 <div class="form-group">
+                 <label for="exampleInputPassword1">Numero de identificacion</label>
+                 <input type="number" class="form-control" id="nunid" name="nunid" placeholder="Numero de identificacion">
+                </div>
 
-    <div class="table-responsive table-responsive-data2">
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    
-                    <th scope="col">Tipo de identidad</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">Razon social</th>
-                    <th scope="col">Direccion</th>
-                    <th scope="col">Nombre de contacto</th>
-                    <th scope="col">Numero de celular</th>
-                    <th scope="col" colspan="2">Opciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                     <?php
-                        include('consulta_p.php');
-                         while($row = mysqli_fetch_array($resultado)){?>
-                        <tr>
-                                 <td class="table-light"><?php echo $row['T_ID'];?></td>
-                                 <td class="table-light"><?php echo $row['ID'];?></td>
-                                 <td class="table-light"><?php echo $row['R_social'];?></td>
-                                 <td class="table-light"><?php echo $row['Dir'];?></td>
-                                 <td class="table-light"><?php echo $row['Nom_contacto'];?></td>
-                                 <td class="table-light"><?php echo $row['Cel_contacto'];?></td>
-                                 <td class="table-light"><a href="modificarp.php?ID=<?php echo $row['ID'];?>"><i class="zmdi zmdi-edit"></i></a></td>
-                                 <td class="table-light"><a href="#" data-href="eliminarp.php?id=<?php echo $row['ID']; ?>" onclick="return confirm('¿Realmente desea eliminar el usuario?')"><i class="zmdi zmdi-delete"></i></td>
-                                 
-                        </tr>
-                    <?php } ?>
-                
-            </tbody>
+                <div class="form-group">
+                 <label for="exampleInputPassword1">Nombre o razon social</label>
+                 <input type="text" class="form-control" id="nsocial" name="nsocial" placeholder="Nombre o razon social">
+                </div>
 
-       
-        </table>
-    </div>
-    <!-- END DATA TABLE -->
+                <div class="form-group">
+                 <label for="exampleInputPassword1">Direccion</label>
+                 <input type="text" class="form-control" id="dir" name="dir" placeholder="Direccion">
+                </div>
+
+                <div class="form-group">
+                 <label for="exampleInputPassword1">Nombre contacto</label>
+                 <input type="text" class="form-control" id="noncon" name="noncon" placeholder="Nombre contacto">
+                </div>
+
+                <div class="form-group">
+                 <label for="exampleInputPassword1">Numero de contacto</label>
+                 <input type="number" class="form-control" id="nuncon" name="nuncon" placeholder="Numero de contacto">
+                </div>
+  
+  
+  <a href="proveedores.php" class="btn btn-primary">Regresar</a>	
+  <button type="submit" class="btn btn-success">Registrar</button>
+</form>
+
+       </div>
+
 
     </div>
 
