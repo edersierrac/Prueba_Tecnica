@@ -112,12 +112,16 @@
                         include('listar_receppro.php');
                          while($row = mysqli_fetch_array($resultado)){?>
                         <tr>
-                                 <td class="table-light"><?php echo $row['T_ID'];?></td>
-                                 <td class="table-light"><?php echo $row['ID'];?></td>
-                                 <td class="table-light"><?php echo $row['R_social'];?></td>
-                                 <td class="table-light"><?php echo $row['Dir'];?></td>
-                                 <td class="table-light"><?php echo $row['Nom_contacto'];?></td>
-                                 <td class="table-light"><?php echo $row['Cel_contacto'];?></td>
+                                 <td class="table-light"><?php echo $row['Fecha_re'];?></td>
+                                 <td class="table-light"><?php echo $row['Producto_re'];?></td>
+                                 <td class="table-light"><?php echo $row['Prov_re'];?></td>
+                                 <td class="table-light"><?php echo $row['Idp_re'];?></td>
+                                 <td class="table-light"><?php echo $row['Numf_re'];?></td>
+                                 <td class="table-light"><?php echo $row['Can_re'];?></td>
+                                 <td class="table-light"><?php echo $row['lote_re'];?></td>
+                                 <td class="table-light"><?php echo $row['Invima_re'];?></td>
+                                 <td class="table-light"><?php echo $row['Fechav_re'];?></td>
+                                 <td class="table-light"><?php echo $row['Descrip_re'];?></td>
                                  <td class="table-light"><a href="formmod_p.php?ID=<?php echo $row['ID'];?>"><i class="zmdi zmdi-edit"></i></a></td>
                                  <td class="table-light"><a href="eliminar_p.php?ID=<?php echo $row['ID'];?>" onclick="return confirm('¿Realmente desea eliminar el usuario?')"><i class="zmdi zmdi-delete"></i></td>
                                  
