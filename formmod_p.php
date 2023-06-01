@@ -1,3 +1,19 @@
+<?php
+
+
+require 'conexion.php';
+
+
+$id = $_GET['ID'];
+
+$sql = "SELECT * FROM proveedores WHERE ID ='$id' ";
+$resultado = $conexion->query($sql);
+$row = $resultado->fetch_array(MYSQLI_ASSOC);
+	
+
+?>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -78,54 +94,55 @@
     <div class="container-fluid">
     <br>
     <br>
-    <h3 class="title-5 m-b-35">Informacion de Proveedores</h3>
-    <div class="table-data__tool">
-       
-        <div class="table-data__tool-right">
-        <a class="btn btn-success btn-rounded" href="form_p.php" role="button">
-                <i class="zmdi zmdi-plus"></i>Agrergar</a>
-            
-        </div>
+    <h3 class="title-5 m-b-35">modificar Proveedores</h3>
     </div>
+    
 
+      <div class="container">
+        
+      <form form method="post" action="update_p.php">
+       <div class="form-group">
+           <label for="exampleInputEmail1">Tipo de identificacion</label>
+           <select class="custom-select my-1 mr-sm-2" id="tipodocumento" name="tipodocumento">
+                    <option value="Cedula" <?php if($row['T_ID']=='Cedula') echo 'selected'; ?>>Cedula</option>
+                    <option value="NIT" <?php if($row['T_ID']=='NIT') echo 'selected'; ?>>NIT</option>
+                    <option value="Cedula extrangera" <?php if($row['T_ID']=='Cedula extrangera') echo 'selected'; ?>>Cedula extrangera</option>
+                    <option value="NIT extrangera" <?php if($row['T_ID']=='NIT extrangera') echo 'selected'; ?>>NIT de extrangeria</option>
+           </select>
+          
+      </div>
+                 <div class="form-group">
+                 <label for="exampleInputPassword1">Numero de identificacion</label>
+                 <input  type="number" class="form-control" id="nunid" name="nunid" value="<?php echo $row['ID']; ?>" placeholder="Numero de identificacion">
+                </div>
 
-    <div class="table-responsive table-responsive-data2">
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    
-                    <th scope="col">Tipo de identidad</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">Razon social</th>
-                    <th scope="col">Direccion</th>
-                    <th scope="col">Nombre de contacto</th>
-                    <th scope="col">Numero de celular</th>
-                    <th scope="col" colspan="2">Opciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                     <?php
-                        include('listar_p.php');
-                         while($row = mysqli_fetch_array($resultado)){?>
-                        <tr>
-                                 <td class="table-light"><?php echo $row['T_ID'];?></td>
-                                 <td class="table-light"><?php echo $row['ID'];?></td>
-                                 <td class="table-light"><?php echo $row['R_social'];?></td>
-                                 <td class="table-light"><?php echo $row['Dir'];?></td>
-                                 <td class="table-light"><?php echo $row['Nom_contacto'];?></td>
-                                 <td class="table-light"><?php echo $row['Cel_contacto'];?></td>
-                                 <td class="table-light"><a href="formmod_p.php?ID=<?php echo $row['ID'];?>"><i class="zmdi zmdi-edit"></i></a></td>
-                                 <td class="table-light"><a href="eliminar_p.php?ID=<?php echo $row['ID'];?>" onclick="return confirm('¿Realmente desea eliminar el usuario?')"><i class="zmdi zmdi-delete"></i></td>
-                                 
-                        </tr>
-                    <?php } ?>
-                
-            </tbody>
+                <div class="form-group">
+                 <label for="exampleInputPassword1">Nombre o razon social</label>
+                 <input type="text" class="form-control" id="nsocial" name="nsocial" value="<?php echo $row['R_social']; ?>" placeholder="Nombre o razon social" required>
+                </div>
 
-       
-        </table>
-    </div>
-    <!-- END DATA TABLE -->
+                <div class="form-group">
+                 <label for="exampleInputPassword1">Direccion</label>
+                 <input type="text" class="form-control" id="dir" name="dir" value="<?php echo $row['Dir']; ?>" placeholder="Direccion" required>
+                </div>
+
+                <div class="form-group">
+                 <label for="exampleInputPassword1">Nombre contacto</label>
+                 <input type="text" class="form-control" id="noncon" name="noncon" value="<?php echo $row['Nom_contacto']; ?>" placeholder="Nombre contacto" required>
+                </div>
+
+                <div class="form-group">
+                 <label for="exampleInputPassword1">Numero de contacto</label>
+                 <input type="number" class="form-control" id="nuncon" name="nuncon" value="<?php echo $row['Cel_contacto']; ?>" placeholder="Numero de contacto" required>
+                </div>
+  
+  
+  <a href="proveedores.php" class="btn btn-primary">Regresar</a>	
+  <button type="submit" class="btn btn-success">Modificar</button>
+</form>
+
+       </div>
+
 
     </div>
 
@@ -138,11 +155,6 @@
       
     </p>
   </section>
-
-   
-
-		
-			
 
 
 </body>

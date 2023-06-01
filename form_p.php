@@ -89,34 +89,34 @@
            <select class="custom-select my-1 mr-sm-2" id="tipodocumento" name="tipodocumento">
                     <option selected value="Cedula">Cedula</option>
                     <option value="NIT">NIT</option>
-                    <option value="Ced extran">Cedula de extrangeria</option>
-                    <option value="NIT extran">NIT de extrangeria</option>
+                    <option value="Cedula extrangera">Cedula extrangera</option>
+                    <option value="NIT extrangera">NIT extrangera</option>
            </select>
           
       </div>
                  <div class="form-group">
                  <label for="exampleInputPassword1">Numero de identificacion</label>
-                 <input type="number" class="form-control" id="nunid" name="nunid" placeholder="Numero de identificacion">
+                 <input type="number" class="form-control" id="nunid" name="nunid" placeholder="Numero de identificacion" required>
                 </div>
 
                 <div class="form-group">
                  <label for="exampleInputPassword1">Nombre o razon social</label>
-                 <input type="text" class="form-control" id="nsocial" name="nsocial" placeholder="Nombre o razon social">
+                 <input type="text" class="form-control" id="nsocial" name="nsocial" placeholder="Nombre o razon social" required>
                 </div>
 
                 <div class="form-group">
                  <label for="exampleInputPassword1">Direccion</label>
-                 <input type="text" class="form-control" id="dir" name="dir" placeholder="Direccion">
+                 <input type="text" class="form-control" id="dir" name="dir" placeholder="Direccion" required>
                 </div>
 
                 <div class="form-group">
                  <label for="exampleInputPassword1">Nombre contacto</label>
-                 <input type="text" class="form-control" id="noncon" name="noncon" placeholder="Nombre contacto">
+                 <input type="text" class="form-control" id="noncon" name="noncon" placeholder="Nombre contacto" required>
                 </div>
 
                 <div class="form-group">
                  <label for="exampleInputPassword1">Numero de contacto</label>
-                 <input type="number" class="form-control" id="nuncon" name="nuncon" placeholder="Numero de contacto">
+                 <input type="number" class="form-control" id="nuncon" name="nuncon" placeholder="Numero de contacto" required>
                 </div>
   
   
