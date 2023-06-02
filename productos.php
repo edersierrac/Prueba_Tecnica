@@ -120,7 +120,7 @@
                                  <td class="table-light"><?php echo $row['Noml_p'];?></td>
                                  <td class="table-light"><?php if ($row['Estado_p'] == "Activo"){ echo "<button type='button' class='btn btn-success'>Activo</button>";} else {echo "<button type='button' class='btn btn-danger'>Inactivo</button>";}?></td>
                                  <td class="table-light"><a href="formmod_prod.php?IDP=<?php echo $row['Cod_p'];?>"><i class="zmdi zmdi-edit"></i></a></td>
-                                 <td class="table-light"><a href="backend/eliminar_produc.php?IDP=<?php echo $row['Cod_p'];?>" onclick="return confirm('¿Realmente desea eliminar el usuario?')"><i class="zmdi zmdi-delete"></i></td>
+                                 <td class="table-light"><a href="backend/eliminar_produc.php?IDP=<?php echo $row['Cod_p'];?>" onclick="return confirm('¿Realmente desea eliminar el producto?')"><i class="zmdi zmdi-delete"></i></td>
                                  
                         </tr>
                     <?php } ?>

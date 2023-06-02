@@ -130,7 +130,7 @@
                                  <td class="table-light"><?php echo $row['Fechav_re'];?></td>
                                  <td class="table-light"><?php echo $row['Descrip_re'];?></td>
                                  <td class="table-light"><a href="formmod_receppro.php?Numf=<?php echo $row['Numf_re'];?>"><i class="zmdi zmdi-edit"></i></a></td>
-                                 <td class="table-light"><a href="backend/eliminar_receppro.php?Numf=<?php echo $row['Numf_re'];?>" onclick="return confirm('¿Realmente desea eliminar el usuario?')"><i class="zmdi zmdi-delete"></i></td>
+                                 <td class="table-light"><a href="backend/eliminar_receppro.php?Numf=<?php echo $row['Numf_re'];?>" onclick="return confirm('¿Realmente desea eliminar la recepcion del producto?')"><i class="zmdi zmdi-delete"></i></td>
                                  
                         </tr>
                     <?php } ?>
