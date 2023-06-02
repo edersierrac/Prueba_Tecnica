@@ -75,9 +75,16 @@
     
     <!-- DATA TABLE -->
     <div class="container-fluid">
-    <br>
-    <br>
-    <h3 class="title-5 m-b-35">Informacion de Proveedores</h3>
+    
+
+    <figure class="text-center">
+    <blockquote class="blockquote">
+    <p><h3>PANEL PRODUCTOS</h3></p>
+     </blockquote>
+    <figcaption class="blockquote-footer">
+     <cite title="Título fuente">Farmedic</cite>
+      </figcaption>
+     </figure>
     <div class="table-data__tool">
        
         <div class="table-data__tool-right">
@@ -104,7 +111,7 @@
             </thead>
             <tbody>
                      <?php
-                        include('listar_produ.php');
+                        include('backend/listar_produ.php');
                          while($row = mysqli_fetch_array($resultado)){?>
                         <tr>
                                  <td class="table-light"><?php echo $row['Cod_p'];?></td>
@@ -113,7 +120,7 @@
                                  <td class="table-light"><?php echo $row['Noml_p'];?></td>
                                  <td class="table-light"><?php if ($row['Estado_p'] == "Activo"){ echo "<button type='button' class='btn btn-success'>Activo</button>";} else {echo "<button type='button' class='btn btn-danger'>Inactivo</button>";}?></td>
                                  <td class="table-light"><a href="formmod_prod.php?IDP=<?php echo $row['Cod_p'];?>"><i class="zmdi zmdi-edit"></i></a></td>
-                                 <td class="table-light"><a href="eliminar_produc.php?IDP=<?php echo $row['Cod_p'];?>" onclick="return confirm('¿Realmente desea eliminar el usuario?')"><i class="zmdi zmdi-delete"></i></td>
+                                 <td class="table-light"><a href="backend/eliminar_produc.php?IDP=<?php echo $row['Cod_p'];?>" onclick="return confirm('¿Realmente desea eliminar el usuario?')"><i class="zmdi zmdi-delete"></i></td>
                                  
                         </tr>
                     <?php } ?>

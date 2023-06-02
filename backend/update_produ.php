@@ -22,10 +22,10 @@ require 'conexion.php';
     
     if($updateprod) { 
         
-        echo '<script language="javascript">alert("Producto actualizado correctamente");window.location.href="Productos.php"</script>';
+        echo '<script language="javascript">alert("Producto actualizado correctamente");window.location.href="../Productos.php"</script>';
       } else { 
         
-       echo '<script language="javascript">alert("error al actualizar Producto");window.location.href="productos.php"</script>';
+       echo '<script language="javascript">alert("error al actualizar Producto");window.location.href="../productos.php"</script>';
     
        }
 

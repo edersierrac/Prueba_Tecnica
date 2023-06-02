@@ -83,15 +83,24 @@
     
     <!-- DATA TABLE -->
     <div class="container-fluid">
-    <br>
-    <br>
-    <h3 class="title-5 m-b-35">Formulario de recepcion</h3>
+    <div class="container-fluid">
+    
+
+    <figure class="text-center">
+    <blockquote class="blockquote">
+    <p><h3>FORMULARIO DE RECEPCION</h3></p>
+     </blockquote>
+    <figcaption class="blockquote-footer">
+     <cite title="Título fuente">Farmedic</cite>
+      </figcaption>
+     </figure>
+    
     </div>
     
      <div class="container">
       
         
-      <form form method="post" action="insertar_receppro.php">
+      <form form method="post" action="backend/insertar_receppro.php">
        <div class="form-group  row">
            <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Fecha y hora de recepcion </label>
            <div class="col-sm-8 ">

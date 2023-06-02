@@ -22,10 +22,10 @@ $updatep= $conexion->query($sql);
 
 if($updatep) { 
     
-    echo '<script language="javascript">alert("Proveedor actualizado correctamente");window.location.href="proveedores.php"</script>';
+    echo '<script language="javascript">alert("Proveedor actualizado correctamente");window.location.href="../proveedores.php"</script>';
   } else { 
     
-   echo '<script language="javascript">alert("error al actualizar");window.location.href="proveedores.php"</script>';
+   echo '<script language="javascript">alert("error al actualizar");window.location.href="../proveedores.php"</script>';
 
    }
 

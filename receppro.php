@@ -76,9 +76,16 @@
     
     <!-- DATA TABLE -->
     <div class="container-fluid">
-    <br>
-    <br>
-    <h3 class="title-5 m-b-35">Informacion de recepcion de productos</h3>
+    
+
+    <figure class="text-center">
+    <blockquote class="blockquote">
+    <p><h3>PANEL  RECEPCION DE PRODUCTOS</h3></p>
+     </blockquote>
+    <figcaption class="blockquote-footer">
+     <cite title="Título fuente">Farmedic</cite>
+      </figcaption>
+     </figure>
     <div class="table-data__tool">
        
         <div class="table-data__tool-right">
@@ -109,7 +116,7 @@
             </thead>
             <tbody>
                      <?php
-                        include('listar_receppro.php');
+                        include('backend/listar_receppro.php');
                          while($row = mysqli_fetch_array($resultado)){?>
                         <tr>
                                  <td class="table-light"><?php echo $row['Fecha_re'];?></td>
@@ -123,7 +130,7 @@
                                  <td class="table-light"><?php echo $row['Fechav_re'];?></td>
                                  <td class="table-light"><?php echo $row['Descrip_re'];?></td>
                                  <td class="table-light"><a href="formmod_receppro.php?Numf=<?php echo $row['Numf_re'];?>"><i class="zmdi zmdi-edit"></i></a></td>
-                                 <td class="table-light"><a href="eliminar_receppro.php?Numf=<?php echo $row['Numf_re'];?>" onclick="return confirm('¿Realmente desea eliminar el usuario?')"><i class="zmdi zmdi-delete"></i></td>
+                                 <td class="table-light"><a href="backend/eliminar_receppro.php?Numf=<?php echo $row['Numf_re'];?>" onclick="return confirm('¿Realmente desea eliminar el usuario?')"><i class="zmdi zmdi-delete"></i></td>
                                  
                         </tr>
                     <?php } ?>

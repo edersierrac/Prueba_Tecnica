@@ -76,9 +76,16 @@
     
     <!-- DATA TABLE -->
     <div class="container-fluid">
-    <br>
-    <br>
-    <h3 class="title-5 m-b-35">Informacion de Proveedores</h3>
+    
+
+    <figure class="text-center">
+    <blockquote class="blockquote">
+    <p><h3>PANEL PROVEEDORES</h3></p>
+     </blockquote>
+    <figcaption class="blockquote-footer">
+     <cite title="Título fuente">Farmedic</cite>
+      </figcaption>
+     </figure>
     <div class="table-data__tool">
        
         <div class="table-data__tool-right">
@@ -105,7 +112,7 @@
             </thead>
             <tbody>
                      <?php
-                        include('listar_p.php');
+                        include('backend/listar_p.php');
                          while($row = mysqli_fetch_array($resultado)){?>
                         <tr>
                                  <td class="table-light"><?php echo $row['T_ID'];?></td>
@@ -115,7 +122,7 @@
                                  <td class="table-light"><?php echo $row['Nom_contacto'];?></td>
                                  <td class="table-light"><?php echo $row['Cel_contacto'];?></td>
                                  <td class="table-light"><a href="formmod_p.php?ID=<?php echo $row['ID'];?>"><i class="zmdi zmdi-edit"></i></a></td>
-                                 <td class="table-light"><a href="eliminar_p.php?ID=<?php echo $row['ID'];?>" onclick="return confirm('¿Realmente desea eliminar el usuario?')"><i class="zmdi zmdi-delete"></i></td>
+                                 <td class="table-light"><a href="backend/eliminar_p.php?ID=<?php echo $row['ID'];?>" onclick="return confirm('¿Realmente desea eliminar el usuario?')"><i class="zmdi zmdi-delete"></i></td>
                                  
                         </tr>
                     <?php } ?>

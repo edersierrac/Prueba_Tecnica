@@ -23,10 +23,10 @@ $updatep= $conexion->query($sql);
 
 if($updatep) { 
     
-    echo '<script language="javascript">alert("Informacion de recepcion del producto modificado correctamente");window.location.href="receppro.php"</script>';
+    echo '<script language="javascript">alert("Informacion de recepcion del producto modificado correctamente");window.location.href="../receppro.php"</script>';
   } else { 
     
-   echo '<script language="javascript">alert("error al modificar");window.location.href="receppro.php"</script>';
+   echo '<script language="javascript">alert("error al modificar");window.location.href="../receppro.php"</script>';
 
    }
 

@@ -19,10 +19,10 @@ $inserrecep= $conexion->query($sql);
 
  if($inserrecep) { 
     
-echo '<script language="javascript">alert("El producto se a guardado correctamente");window.location.href="receppro.php"</script>';
+echo '<script language="javascript">alert("El producto se a guardado correctamente");window.location.href="../receppro.php"</script>';
    } else { 
      
-    echo '<script language="javascript">alert("error al guardar el producto");window.location.href="receppro.php"</script>';
+    echo '<script language="javascript">alert("error al guardar el producto");window.location.href="../receppro.php"</script>';
 
     }
 

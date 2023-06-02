@@ -75,15 +75,26 @@
     
     <!-- DATA TABLE -->
     <div class="container-fluid">
-    <br>
-    <br>
-    <h3 class="title-5 m-b-35">Informacion de Proveedores</h3>
+    
+    <div class="container-fluid">
+    
+
+    <figure class="text-center">
+    <blockquote class="blockquote">
+    <p><h3>FORMULARIO PROVEEDORES</h3></p>
+     </blockquote>
+    <figcaption class="blockquote-footer">
+     <cite title="Título fuente">Farmedic</cite>
+      </figcaption>
+     </figure>
+    
+
     </div>
     
 
       <div class="container">
         
-      <form form method="post" action="insertar_p.php">
+      <form form method="post" action="backend/insertar_p.php">
        <div class="form-group">
            <label for="exampleInputEmail1">Tipo de identificacion</label>
            <select class="custom-select my-1 mr-sm-2" id="tipodocumento" name="tipodocumento">

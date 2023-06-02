@@ -22,10 +22,10 @@ $insertp= $conexion->query($sql);
 
  if($insertp) { 
     
-echo '<script language="javascript">alert("Producto guardado correctamente");window.location.href="productos.php"</script>';
+echo '<script language="javascript">alert("Producto guardado correctamente");window.location.href="../productos.php"</script>';
    } else { 
      
-    echo '<script language="javascript">alert("error al guardar Producto");window.location.href="productos.php"</script>';
+    echo '<script language="javascript">alert("error al guardar Producto");window.location.href="../productos.php"</script>';
 
     }
 
