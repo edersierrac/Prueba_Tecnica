@@ -4,16 +4,14 @@
 require 'conexion.php';
 
 
-$id = $_GET['ID'];
+$idp = $_GET['IDP'];
 
-$sql = "SELECT * FROM proveedores WHERE ID ='$id' ";
+$sql = "SELECT * FROM producto WHERE Cod_p ='$idp' ";
 $resultado = $conexion->query($sql);
 $row = $resultado->fetch_array(MYSQLI_ASSOC);
 	
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -94,51 +92,43 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
     <div class="container-fluid">
     <br>
     <br>
-    <h3 class="title-5 m-b-35">modificar Proveedores</h3>
+    <h3 class="title-5 m-b-35">Informacion de Proveedores</h3>
     </div>
     
 
       <div class="container">
         
-      <form form method="post" action="update_p.php">
-       <div class="form-group">
-           <label for="exampleInputEmail1">Tipo de identificacion</label>
-           <select  class="custom-select my-1 mr-sm-2" id="tipodocumento" name="tipodocumento">
-                    <option value="Cedula" <?php if($row['T_ID']=='Cedula') echo 'selected'; ?>>Cedula</option>
-                    <option value="NIT" <?php if($row['T_ID']=='NIT') echo 'selected'; ?>>NIT</option>
-                    <option value="Cedula extrangera" <?php if($row['T_ID']=='Cedula extrangera') echo 'selected'; ?>>Cedula extrangera</option>
-                    <option value="NIT extrangera" <?php if($row['T_ID']=='NIT extrangera') echo 'selected'; ?>>NIT de extrangeria</option>
-           </select>
+      <form form method="post" action="update_produ.php">
           
-      </div>
+                
                  <div class="form-group">
-                 <label for="exampleInputPassword1">Numero de identificacion</label>
-                 <input  type="number" class="form-control" id="nunid" readonly name="nunid" value="<?php echo $row['ID']; ?>" placeholder="Numero de identificacion">
+                 <label for="exampleInputPassword1">Codigo Producto</label>
+                 <input type="number" class="form-control" id="codpro" readonly name="codpro"  value="<?php echo $row['Cod_p']; ?>" placeholder="Codigo Producto" required>
                 </div>
 
                 <div class="form-group">
-                 <label for="exampleInputPassword1">Nombre o razon social</label>
-                 <input type="text" class="form-control" id="nsocial" name="nsocial" value="<?php echo $row['R_social']; ?>" placeholder="Nombre o razon social" required>
+                 <label for="exampleInputPassword1">Nombre del producto</label>
+                 <input type="text" class="form-control" id="nompro" name="nompro" value="<?php echo $row['Nom_p']; ?>" placeholder="Nombre del producto" required>
                 </div>
 
                 <div class="form-group">
-                 <label for="exampleInputPassword1">Direccion</label>
-                 <input type="text" class="form-control" id="dir" name="dir" value="<?php echo $row['Dir']; ?>" placeholder="Direccion" required>
+                 <label for="exampleInputPassword1">Descripcion del producto</label>
+                 <textarea class="form-control" id="despro" name="despro" rows="3" require><?php echo $row['Desc_p']; ?></textarea>
                 </div>
 
                 <div class="form-group">
-                 <label for="exampleInputPassword1">Nombre contacto</label>
-                 <input type="text" class="form-control" id="noncon" name="noncon" value="<?php echo $row['Nom_contacto']; ?>" placeholder="Nombre contacto" required>
+                 <label for="exampleInputPassword1">Estado del producto</label>
+                 <input type="text" class="form-control" id="estpro" name="estpro"  value="<?php echo $row['Estado_p']; ?>" readonly  >
                 </div>
 
                 <div class="form-group">
-                 <label for="exampleInputPassword1">Numero de contacto</label>
-                 <input type="number" class="form-control" id="nuncon" name="nuncon" value="<?php echo $row['Cel_contacto']; ?>" placeholder="Numero de contacto" required>
+                 <label for="exampleInputPassword1">Nombre del laboratorio</label>
+                 <input type="text" class="form-control" id="nomlpro" name="nomlpro" value="<?php echo $row['Noml_p']; ?>" placeholder="Nombre del laboratorio" required>
                 </div>
   
   
-  <a href="proveedores.php" class="btn btn-primary">Regresar</a>	
-  <button type="submit" class="btn btn-success">Modificar</button>
+  <a href="productos.php" class="btn btn-primary">Regresar</a>	
+  <button type="submit" class="btn btn-success">Actualizar</button>
 </form>
 
        </div>
@@ -148,15 +138,10 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
     </div>
 
-   
+</div>
   <section class="container-fluid footer_section">
     <p>
       &copy; 2023  Design by pepitoplus
       
     </p>
   </section>
-
-
-</body>
-
-</html>

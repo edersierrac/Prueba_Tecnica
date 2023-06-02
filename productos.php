@@ -1,20 +1,3 @@
-<?php
-
-
-require 'conexion.php';
-
-
-$id = $_GET['ID'];
-
-$sql = "SELECT * FROM proveedores WHERE ID ='$id' ";
-$resultado = $conexion->query($sql);
-$row = $resultado->fetch_array(MYSQLI_ASSOC);
-	
-
-?>
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,55 +77,53 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
     <div class="container-fluid">
     <br>
     <br>
-    <h3 class="title-5 m-b-35">modificar Proveedores</h3>
+    <h3 class="title-5 m-b-35">Informacion de Proveedores</h3>
+    <div class="table-data__tool">
+       
+        <div class="table-data__tool-right">
+        <a class="btn btn-success btn-rounded" href="form_produc.php" role="button">
+                <i class="zmdi zmdi-plus"></i>Agrergar</a>
+            
+        </div>
     </div>
-    
 
-      <div class="container">
-        
-      <form form method="post" action="update_p.php">
-       <div class="form-group">
-           <label for="exampleInputEmail1">Tipo de identificacion</label>
-           <select  class="custom-select my-1 mr-sm-2" id="tipodocumento" name="tipodocumento">
-                    <option value="Cedula" <?php if($row['T_ID']=='Cedula') echo 'selected'; ?>>Cedula</option>
-                    <option value="NIT" <?php if($row['T_ID']=='NIT') echo 'selected'; ?>>NIT</option>
-                    <option value="Cedula extrangera" <?php if($row['T_ID']=='Cedula extrangera') echo 'selected'; ?>>Cedula extrangera</option>
-                    <option value="NIT extrangera" <?php if($row['T_ID']=='NIT extrangera') echo 'selected'; ?>>NIT de extrangeria</option>
-           </select>
-          
-      </div>
-                 <div class="form-group">
-                 <label for="exampleInputPassword1">Numero de identificacion</label>
-                 <input  type="number" class="form-control" id="nunid" readonly name="nunid" value="<?php echo $row['ID']; ?>" placeholder="Numero de identificacion">
-                </div>
 
-                <div class="form-group">
-                 <label for="exampleInputPassword1">Nombre o razon social</label>
-                 <input type="text" class="form-control" id="nsocial" name="nsocial" value="<?php echo $row['R_social']; ?>" placeholder="Nombre o razon social" required>
-                </div>
+    <div class="table-responsive table-responsive-data2">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    
+                    <th scope="col">Codigo del producto</th>
+                    <th scope="col">Nombre del producto</th>
+                    <th scope="col">Descripcion del producto</th>
+                    <th scope="col">Nombre laboratorio</th>
+                    <th scope="col">Estado</th>
+                    
+                    <th scope="col" colspan="2">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                     <?php
+                        include('listar_produ.php');
+                         while($row = mysqli_fetch_array($resultado)){?>
+                        <tr>
+                                 <td class="table-light"><?php echo $row['Cod_p'];?></td>
+                                 <td class="table-light"><?php echo $row['Nom_p'];?></td>
+                                 <td class="table-light"><?php echo $row['Desc_p'];?></td>
+                                 <td class="table-light"><?php echo $row['Noml_p'];?></td>
+                                 <td class="table-light"><?php if ($row['Estado_p'] == "Activo"){ echo "<button type='button' class='btn btn-success'>Activo</button>";} else {echo "<button type='button' class='btn btn-danger'>Inactivo</button>";}?></td>
+                                 <td class="table-light"><a href="formmod_prod.php?IDP=<?php echo $row['Cod_p'];?>"><i class="zmdi zmdi-edit"></i></a></td>
+                                 <td class="table-light"><a href="eliminar_produc.php?IDP=<?php echo $row['Cod_p'];?>" onclick="return confirm('¿Realmente desea eliminar el usuario?')"><i class="zmdi zmdi-delete"></i></td>
+                                 
+                        </tr>
+                    <?php } ?>
+                
+            </tbody>
 
-                <div class="form-group">
-                 <label for="exampleInputPassword1">Direccion</label>
-                 <input type="text" class="form-control" id="dir" name="dir" value="<?php echo $row['Dir']; ?>" placeholder="Direccion" required>
-                </div>
-
-                <div class="form-group">
-                 <label for="exampleInputPassword1">Nombre contacto</label>
-                 <input type="text" class="form-control" id="noncon" name="noncon" value="<?php echo $row['Nom_contacto']; ?>" placeholder="Nombre contacto" required>
-                </div>
-
-                <div class="form-group">
-                 <label for="exampleInputPassword1">Numero de contacto</label>
-                 <input type="number" class="form-control" id="nuncon" name="nuncon" value="<?php echo $row['Cel_contacto']; ?>" placeholder="Numero de contacto" required>
-                </div>
-  
-  
-  <a href="proveedores.php" class="btn btn-primary">Regresar</a>	
-  <button type="submit" class="btn btn-success">Modificar</button>
-</form>
-
-       </div>
-
+       
+        </table>
+    </div>
+    <!-- END DATA TABLE -->
 
     </div>
 
@@ -155,6 +136,11 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
       
     </p>
   </section>
+
+   
+
+		
+			
 
 
 </body>
